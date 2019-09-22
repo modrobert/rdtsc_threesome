@@ -1,6 +1,6 @@
 ; rdtsc_a2 - Reads and outputs the RDTSC instruction contents in hex.
 ; Copyright (C) 2019  Robert V. <modrobert@gmail.com>
-
+;
 ; This program is free software: you can redistribute it and/or modify
 ; it under the terms of the GNU General Public License as published by
 ; the Free Software Foundation, either version 3 of the License, or
