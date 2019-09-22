@@ -1,6 +1,6 @@
 # rdtsc_threesome
 
-## Three ways of reading the RDTSC instruction. ;)
+## Three ways of reading the RDTSC x86-64 instruction. ;)
 
 ### Copyright (C) 2019  Robert V. &lt;modrobert@gmail.com&gt;
 ### Software licensed under GPLv3.
@@ -9,9 +9,10 @@
 
 ### Description
 
-Simply three ways of reading the RDTSC (Read Time-Stamp Counter) instruction
-under GNU/Linux. Using either C, assembler with printf call, or pure assembler
-which outputs hex digits. The 64-bit counter increments each CPU clock cycle.
+Simply three ways of reading the RDTSC (Read Time-Stamp Counter) x86-64 
+instruction under GNU/Linux. Using either C, assembler with printf call, or
+pure assembler which outputs hex digits. The 64-bit counter increments each
+CPU clock cycle.
 
 Think of these sources as useful stubs when playing around with the RDTSC
 instruction which is good for precise timing in various attacks related to
