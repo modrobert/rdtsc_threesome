@@ -10,8 +10,8 @@
 ### Description
 
 Simply three ways of reading the RDTSC (Read Time-Stamp Counter) instruction
-under GNU/Linux. Using C, assembler with printf call, and pure assembler which
-outputs hex digits. The 64-bit counter increments each CPU clock cycle.
+under GNU/Linux. Using either C, assembler with printf call, or pure assembler
+which outputs hex digits. The 64-bit counter increments each CPU clock cycle.
 
 Think of these sources as useful stubs when playing around with the RDTSC
 instruction which is good for precise timing in various attacks related to
