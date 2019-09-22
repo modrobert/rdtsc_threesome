@@ -36,12 +36,12 @@ $ echo $((`./rdtsc_a2`))
 
 ### Build
 
-Use the included Makefile which supports several targets:
-make all        ; Default, builds all.
-make rdtsc      ; C version, outputs decimal.
-make rdtsc_a    ; Assembler version, uses printf call, outputs decimal.
-make rdtsc_a2   ; Pure assembler version, outputs hexadecimal.
-make debug      ; Builds all with debug info for 'gdb'.
-make strip      ; Builds all and strips output binaries from symbols.
+Use the included Makefile which supports several targets:  
+make all        ; Default, builds all.  
+make rdtsc      ; C version, outputs decimal.  
+make rdtsc_a    ; Assembler version, uses printf call, outputs decimal.  
+make rdtsc_a2   ; Pure assembler version, outputs hexadecimal.  
+make debug      ; Builds all with debug info for 'gdb'.  
+make strip      ; Builds all and strips output binaries from symbols.  
 make clean      ; Deletes all output binaries.
 
