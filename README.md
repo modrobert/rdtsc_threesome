@@ -36,6 +36,8 @@ $ echo $((`./rdtsc_a2`))
 
 ### Build
 
+You need 'gcc' and 'nasm' to build this.  
+  
 Use the included Makefile which supports several targets:  
 <pre>
 make all        ; Default, builds all.  
