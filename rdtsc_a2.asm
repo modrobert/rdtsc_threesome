@@ -44,7 +44,7 @@ hex_string:
     push rsi
     push r8
     push rdx
-    mov rax, rdx        ; rax contains number to convert
+    mov rax, rdx        ; rdx contains number to convert
     mov rsi, buffer+blen    ; start at end of buffer
     mov r8, rax         ; save number
     xor rdx, rdx        ; result will be in rdx
