@@ -1,0 +1,9 @@
+# asm with printf
+nasm -f elf64 rdtsc_a.asm -o rdtsc_a.o && gcc -no-pie -o rdtsc_a rdtsc_a.o
+
+# asm pure and stripped
+nasm -f elf64 rdtsc_a2.asm -o rdtsc_a2.o && ld -m elf_x86_64 -s -o rdtsc_a2 rdtsc_a2.o
+
+# C
+gcc -O2 -Wpedantic rdtsc.c -o rdtsc
+
