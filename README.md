@@ -15,8 +15,7 @@ outputs hex digits. The 64-bit counter increments each CPU clock cycle.
 
 Think of these sources as useful stubs when playing around with the RDTSC
 instruction which is good for precise timing in various attacks related to
-RAM, CPU cache and branch prediction, especially in conjunction with the LFENCE
-instruction.
+RAM, CPU cache and branch prediction, especially in conjunction with the xFENCE and CLFLUSH instructions.
 
 ---
 
