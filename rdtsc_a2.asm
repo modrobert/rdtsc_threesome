@@ -13,6 +13,19 @@
 ;
 ; You should have received a copy of the GNU General Public License
 ; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+; For reference:
+;
+; 64-bit Linux fastcall convention
+;    ints/longs/ptrs: RDI, RSI, RDX, RCX, R8, R9
+;     floats/doubles: XMM0 to XMM7
+;
+; The first six integer arguments (from the left) are passed in
+; RDI, RSI, RDX, RCX, R8, and R9, in that order. 
+; Additional integer arguments are passed on the stack. 
+; These registers, plus RAX, R10 and R11 are destroyed by function calls,
+; and thus are available for use by the function without saving. 
+
 global _start
 
 section .data
