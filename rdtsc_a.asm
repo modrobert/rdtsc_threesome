@@ -25,7 +25,6 @@
 ; Additional integer arguments are passed on the stack. 
 ; These registers, plus RAX, R10 and R11 are destroyed by function calls,
 ; and thus are available for use by the function without saving. 
-default rel
 global main
 extern printf
 
@@ -33,15 +32,12 @@ section .rodata
 msg:    db "%llu", 10, 0    ; C string needs 0 terminator
 
 section .text
-main:                   ; for gdb
-    push rbp            ; set up stack frame, must be aligned
-    rdtsc               ; read time stamp counter
-    shl rdx, 32         ; move high bits of results to low part
-    or rdx, rax         ; 64 bit value from rdtsc in rdx
-    xor rax, rax        ; clear rax
-    lea rdi, [msg]      ; get address for message
-    mov rsi, rdx        ; get rdtsc value
-    call printf         ; use printf()
-
-    pop rbp             ; restore stack
+main:                       ; for gdb
+    rdtsc                   ; read time stamp counter
+    shl rdx, 32             ; move high bits of results to low part
+    or rdx, rax             ; 64 bit value from rdtsc in rdx
+    xor rax, rax            ; clear rax
+    lea rdi, [msg]          ; get address for message
+    mov rsi, rdx            ; get rdtsc value
+    call printf             ; use printf()
     ret
