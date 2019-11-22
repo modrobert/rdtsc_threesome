@@ -29,7 +29,7 @@ default rel
 global main
 extern printf
 
-section .data
+section .rodata
 msg:    db "%llu", 10, 0    ; C string needs 0 terminator
 
 section .text

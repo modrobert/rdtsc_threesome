@@ -13,7 +13,7 @@
 ;
 ; You should have received a copy of the GNU General Public License
 ; along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
+default rel
 global _start
 
 section .data
@@ -43,10 +43,12 @@ hex_string:
     push rax                ; saving registers we use
     push rsi
     push r8
+    push r9
     push rdx
     mov rax, rdx            ; rdx contains number to convert
     lea rsi, [buffer+blen]  ; start at end of buffer
     mov r8, rax             ; save number
+    lea r9, [buffer]
     xor rdx, rdx            ; result will be in rdx
 .convert_loop:
     mov rax, r8
@@ -61,9 +63,10 @@ hex_string:
     dec rsi                 ; decrease first to align with buffer
     mov [rsi], al
     shr r8, 4               ; shift 4 bits to the next part
-    cmp rsi, buffer
+    cmp rsi, r9
     jg .convert_loop
     pop rdx                 ; restoring registers we used
+    pop r9
     pop r8
     pop rsi
     pop rax
