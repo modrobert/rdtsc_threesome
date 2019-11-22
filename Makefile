@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -O2 -Wpedantic
-CASFLAGS = -Wpedantic
+CASFLAGS = -Wpedantic -no-pie
 AS = nasm
 ASFLAGS = -f elf64
 LD = ld
@@ -14,14 +14,14 @@ all: rdtsc_a2
 
 debug: CFLAGS = -g -Wpedantic
 debug: ASFLAGS = -f elf64 -F dwarf -g
-debug: CASFLAGS = -Wpedantic -g
+debug: CASFLAGS = -Wpedantic -no-pie -g
 debug: rdtsc
 debug: rdtsc_a
 debug: rdtsc_a2
 
 strip: CFLAGS = -O2 -Wpedantic -s
 strip: LDFLAGS = -m elf_x86_64 -s
-strip: CASFLAGS = -Wpedantic -s
+strip: CASFLAGS = -Wpedantic -no-pie -s
 strip: rdtsc
 strip: rdtsc_a
 strip: rdtsc_a2
