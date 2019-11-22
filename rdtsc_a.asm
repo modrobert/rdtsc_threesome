@@ -25,7 +25,6 @@
 ; Additional integer arguments are passed on the stack. 
 ; These registers, plus RAX, R10 and R11 are destroyed by function calls,
 ; and thus are available for use by the function without saving. 
-default rel
 global main
 extern printf
 
