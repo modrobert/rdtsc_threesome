@@ -29,7 +29,7 @@ $ ./rdtsc_a
 447728419100158
 $ ./rdtsc_a2
 0x00019746544d5f59
-$ echo $((`./rdtsc_a2`))
+$ printf "%llu\n" $((`./rdtsc_a2`))
 448150994372265
 </pre>
 
