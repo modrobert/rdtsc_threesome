@@ -34,6 +34,7 @@ msg:    db "%llu", 10, 0    ; C string needs 0 terminator
 
 section .text
 main:                       ; for gdb
+    push rbp                ; setup stack frame
     rdtsc                   ; read time stamp counter
     shl rdx, 32             ; move high bits of results to low part
     or rdx, rax             ; 64 bit value from rdtsc in rdx
@@ -41,4 +42,6 @@ main:                       ; for gdb
     lea rdi, [msg]          ; get address for message
     mov rsi, rdx            ; get rdtsc value
     call printf             ; use printf()
-    ret
+    pop rbp                 ; restore stack
+    xor rax, rax            ; exit code 0
+    ret                     ; return
